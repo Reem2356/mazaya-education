@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102c26">
+  <meta name="description" content="واجهة تفاعلية لنشرة مزايا التعليم - أكتوبر 2026">
+  <title>مزايا التعليم | أكتوبر 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="مزايا التعليم"><span class="brand-mark">✦</span><span>مزايا التعليم</span></a>
+  <nav>
+    <a href="#offers">استكشف العروض</a>
+    <button id="favNav" class="nav-btn" type="button">المفضلة ♡ <b id="favCount">0</b></button>
+    <a class="download" href="assets/mazaya-october-2026.pdf" download>تحميل النشرة ↓</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="eyebrow">نشرة أكتوبر ٢٠٢٦ <span>/</span> الإصدار ٢٥</div>
+    <h1>لأنك تصنع الأثر،<br><em>تستحق المزايا.</em></h1>
+    <p>عروض وخصومات لمنسوبي التعليم، في مكان واحد.<br>تصفّح نشرة هذا الشهر، واكتشف ما يناسبك.</p>
+    <a class="primary" href="#offers">اكتشف المزايا <span>←</span></a>
+    <div class="hero-stats">
+      <div><strong>١١</strong><span>تصنيفًا للعروض</span></div>
+      <div><strong>٩٤</strong><span>صفحة في النشرة</span></div>
+      <div class="wide"><strong>◉</strong><span>للاستفادة: أبرز البطاقة المهنية عبر تطبيق توكلنا</span></div>
+    </div>
+  </section>
+
+  <section class="intro-strip" aria-hidden="true">
+    <span>مــزايا التعليم / أكتوبر ٢٠٢٦</span><b>لك أنت.</b><span>تقديرٌ يمتد إلى تفاصيل يومك</span>
+  </section>
+
+  <section id="offers" class="offers-section">
+    <div class="section-head">
+      <div><span class="kicker">تعليم · سفر · تسوق · وأكثر</span><h2>اكتشف مزاياك</h2><p>تفاصيل النشرة بين يديك</p></div>
+      <div class="teacher-note">✦ شهر نحتفي فيه بالمعلم</div>
+    </div>
+
+    <div class="filters">
+      <div id="categoryChips" class="chips"></div>
+      <div class="search-row">
+        <label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="ابحث في النصوص… اسم الجهة، المدينة، أو الخدمة" autocomplete="off"></label>
+        <select id="sortSelect" aria-label="ترتيب الصفحات">
+          <option value="asc">ترتيب النشرة</option>
+          <option value="desc">من آخر النشرة</option>
+        </select>
+      </div>
+      <p class="hint">البحث يشمل النصوص القابلة للاستخراج؛ بعض أسماء الجهات والعروض داخل صور. تصفّح التصنيف للاطّلاع عليها جميعًا.</p>
+      <div class="resultbar"><strong id="resultCount">٩٠ صفحة من العروض</strong><button id="resetBtn" type="button">إعادة ضبط التصفية</button></div>
+    </div>
+
+    <div id="cards" class="cards" aria-live="polite"></div>
+    <div class="more-wrap"><button id="moreBtn" class="more" type="button">عرض المزيد من الصفحات ↓</button></div>
+  </section>
+
+  <section class="how">
+    <div><span class="kicker">كيف تستفيد؟</span><h2>خطوات بسيطة للوصول إلى عرضك المناسب.</h2></div>
+    <div class="steps">
+      <article><b>01</b><p>اختر التصنيف وافتح صفحة العرض.</p></article>
+      <article><b>02</b><p>راجع الشروط وتاريخ الانتهاء في الإعلان.</p></article>
+      <article><b>03</b><p>استخدم الكود أو أبرز البطاقة المهنية وفق شروط الجهة.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>المصدر: نشرة «مزايا التعليم» — أكتوبر ٢٠٢٦، الإصدار ٢٥.</p>
+  <p>واجهة تفاعلية للملف المرفق؛ ليست موقعًا رسميًا لوزارة التعليم.</p>
+  <p>العروض معروضة كما وردت في النشرة، ولا يعني إدراجها أنها سارية الآن.</p>
+  <a href="assets/mazaya-october-2026.pdf" target="_blank" rel="noopener">النشرة كاملة — نسخة للقراءة ↗</a><span> · تحفظ المفضلة على هذا الجهاز.</span>
+</footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
+    <div class="viewer-head">
+      <div><small id="viewerMeta"></small><h3 id="viewerTitle">استعراض الصفحة</h3></div>
+      <div class="viewer-actions">
+        <button id="prevBtn" type="button" title="السابق">→</button>
+        <button id="nextBtn" type="button" title="التالي">←</button>
+        <button id="zoomBtn" type="button">تكبير +</button>
+        <a id="pdfPageLink" target="_blank" rel="noopener">المصدر PDF ↗</a>
+        <button type="button" data-close>إغلاق ×</button>
+      </div>
+    </div>
+    <div id="viewerCanvas" class="viewer-canvas"><img id="viewerImage" alt=""></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
